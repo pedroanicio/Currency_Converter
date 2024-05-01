@@ -1,0 +1,16 @@
+﻿INSERT INTO `game` (`publisher`, `launch_date`, `price`, `title`) VALUES
+	('Rockstar Games, Rockstar North', '2018-10-26 13:50:05.878000', 20.30, 'Red Dead Redemption II'),
+	('Bethesda Game Studios', '2011-11-11 15:15:13.636000', 10.99, 'The Elder Scrolls V: Skyrim'),
+	('CD Projekt RED', '2015-05-18 00:00:00.000000', 15.00, 'The Witcher 3: Wild Hunt'),
+	('Capcom', '2005-03-23 15:09:01.674000', 5.45, 'Resident Evil 4'),
+	('Rockstar Games, Rockstar North', '2013-09-17 15:09:01.674000', 9.99, 'Grand Theft Auto V'),
+	('Activision', '2022-09-24 15:09:01.674000', 15.38, 'Call of Duty: Modern Warfare II'),
+	('Square Enix', '2005-12-22 15:09:01.674000', 6.99, 'Kingdom Hearts II'),
+	('Rocksteady Studios, WB Games Montreal', '2012-11-07 15:09:01.674000', 7.55, 'Batman: Arkham City'),
+	('Rockstar Games, Rockstar North', '2005-06-02 15:09:01.674000', 4.99, 'Grand Theft Auto: San Andreas'),
+	('343 Industries, Bungie, Saber Interactive', '2020-11-07 15:09:01.674000', 15.00, 'Halo: The Master Chief Collection'),
+	('FromSoftware', '2016-04-12 15:09:01.674000', 9.79, 'Dark Souls III'),
+	('FromSoftware', '2022-02-25 15:09:01.674000', 20.00, 'Elden Ring'),
+	('Rare, Nintendo, Nintendo of America Inc.', '1997-08-23 15:09:01.674000', 2.00, 'GoldenEye 007'),
+	('Larian Studios', '2023-11-07 15:09:01.674000', 25.00, 'Baldurs Gate III'),
+	('Konami Computer Entertainment Japan, Kojima Productions, HexaDrive, Armature Studio', '2004-11-17 15:09:01.674000', 4.00, 'Metal Gear Solid 3: Snake Eater');

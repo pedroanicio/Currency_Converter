@@ -1,0 +1,27 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: game-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/game_service?useTimezone=true&serverTimezone=UTC
+    username: suporte
+    password: Pedro1001@
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      fail_on_empty_beans: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true #desabilitar em prod
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  flyway:
+    url: jdbc:mysql://localhost:3306/
+    schemas: game_service
+    user: suporte
+    password: Pedro1001@
+
