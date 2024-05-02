@@ -1,7 +1,5 @@
 package br.com.service.gameservice.response;
 
-import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.Objects;
 

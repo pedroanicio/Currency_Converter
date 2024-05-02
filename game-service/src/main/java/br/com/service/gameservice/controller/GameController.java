@@ -3,18 +3,13 @@ package br.com.service.gameservice.controller;
 import br.com.service.gameservice.model.Game;
 import br.com.service.gameservice.proxy.CambioProxy;
 import br.com.service.gameservice.repository.GameRepository;
-import br.com.service.gameservice.response.Cambio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("game-service")
@@ -43,7 +38,8 @@ public class GameController {
         var cambio = proxy.getCambio(game.getPrice(), "USD", currency);
 
         var port = environment.getProperty("local.server.port");
-        game.setEnvironment(port + " FEIGN");
+        game.setEnvironment("Game port: "+port +
+                            " Cambio port: " + cambio.getEnviroment());
         game.setPrice(cambio.getConvertedValue());
         return game;
         //mock
