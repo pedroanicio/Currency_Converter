@@ -3,6 +3,8 @@ package br.com.service.gameservice.controller;
 import br.com.service.gameservice.model.Game;
 import br.com.service.gameservice.proxy.CambioProxy;
 import br.com.service.gameservice.repository.GameRepository;
+import io.github.resilience4j.retry.annotation.Retry;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,7 @@ public class GameController {
 
     //http://localhost:8100/game-service/14/BRL
     @GetMapping(value="/{id}/{currency}")
+    @Retry(name = "default") // 3 requests
     public Game findGame(
         @PathVariable("id") Long id,
         @PathVariable("currency") String currency
