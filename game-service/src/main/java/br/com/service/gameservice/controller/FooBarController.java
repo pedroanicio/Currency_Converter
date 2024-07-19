@@ -8,10 +8,13 @@ import org.springframework.web.client.RestTemplate;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Tag(name = "Foo bar")
 @RestController
 @RequestMapping("game-service")
 public class FooBarController {
@@ -20,6 +23,7 @@ public class FooBarController {
 	
 	//testing resilience4j
 	@GetMapping("/foo-bar")
+	@Operation(summary = "Foo bar")
 	//@Retry(name = "foo-bar", fallbackMethod = "fallbackMethod") // 3 requests
 	//@CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
 	//@RateLimiter(name = "default") // numero maximo de requisicoes para um endpoint num determinado limite de tempo

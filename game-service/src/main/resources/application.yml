@@ -22,7 +22,7 @@ spring:
   jackson:
     default-property-inclusion: NON_NULL
     serialization:
-      fail_on_empty_beans: false
+      fail-on-empty-beans: false
   jpa:
     hibernate:
       ddl-auto: update
@@ -35,4 +35,7 @@ spring:
     schemas: game_service
     user: suporte
     password: Pedro1001@
-
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: /game-service/v3/api-docs
