@@ -4,6 +4,8 @@ import br.com.service.gameservice.model.Game;
 import br.com.service.gameservice.proxy.CambioProxy;
 import br.com.service.gameservice.repository.GameRepository;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@Tag(name = "Game endpoint")
 @RestController
 @RequestMapping("game-service")
 public class GameController {
@@ -28,6 +30,7 @@ public class GameController {
 
 
     //http://localhost:8100/game-service/14/BRL
+    @Operation(summary = "Find a specific game by your id")
     @GetMapping(value="/{id}/{currency}")
     @Retry(name = "default") // 3 requests
     public Game findGame(

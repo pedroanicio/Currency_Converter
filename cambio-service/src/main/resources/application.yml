@@ -24,3 +24,6 @@ spring:
     schemas: cambio_service
     user: suporte
     password: Pedro1001@
+springdoc:
+  api-docs:
+    path: /cambio-service/v3/api-docs
