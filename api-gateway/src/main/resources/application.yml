@@ -27,6 +27,22 @@ spring:
         - Path=/v3/api-docs/**
         filters:
         - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+  logging:
+    pattern:
+      level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+  management:
+    zipkin:
+      tracing:
+        enpoint: http://localhost:9411/api/v2/spans
+    tracing:
+      enabled: true
+      sampling:
+        probability: 1.0
+      propagation:
+        type: w3c
+      baggage:
+        enabled: true		
+
 
 
 
